@@ -27,38 +27,39 @@ class Wave: ScreenSaverView {
 	}
 
 	override func draw(_ rect: NSRect) {
-		super.draw(rect)
+//        super.draw(rect)
 		/*
 		[[NSColor redColor] set];
 		NSRectFill([self bounds]);
 		*/
 //        NSColor.red.set()
-//        self.window?.backgroundColor = NSColor.red
+//        self.window?.backgroundColor = NSColor.gray
 		
 //        if let image = image {
 //          let point = CGPoint(x: (frame.size.width - image.size.width) / 2, y: (frame.size.height - image.size.height) / 2)
 //          image.draw(at: point, from: NSZeroRect, operation: .sourceOver, fraction: 1)
 //        }
         if let context = NSGraphicsContext.current?.cgContext {
-            drawLine(inContext: context)
+            drawLine(inContext: context, inRect: rect)
         }
         
 	}
     
-    func drawLine(inContext context: CGContext ){
+    func drawLine(inContext context: CGContext, inRect rect: CGRect){
         let path = CGMutablePath()
         
-        path.move(to: CGPoint(x: 10, y: 10))
-        path.addLine(to: CGPoint(x: 200, y: 200))
+        path.move(to: CGPoint(x: 40, y: 40))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+//        path.addLine(to: CGPoint(x: 50, y: 50))
         
         path.closeSubpath()
         
         context.setLineWidth(2.0)
         context.setFillColor(CGColor.white)
+        context.setStrokeColor(CGColor(red: 1.0, green: 0.2, blue: 0.2, alpha: 1.0))
         
         context.addPath(path)
-        context.drawPath(using: .fill)
-        
+        context.drawPath(using: .stroke)
         
     }
 

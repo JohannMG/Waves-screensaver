@@ -13,6 +13,8 @@
 		2D5470911FA681B000228403 /* WaveAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470901FA681B000228403 /* WaveAppTests.swift */; };
 		2D54709F1FA6828500228403 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D54709E1FA6828500228403 /* Wave.swift */; };
 		2D5470A01FA6828500228403 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D54709E1FA6828500228403 /* Wave.swift */; };
+		2D5470A21FA6966C00228403 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470A11FA6966C00228403 /* Bar.swift */; };
+		2D5470A31FA6966C00228403 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470A11FA6966C00228403 /* Bar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 		2D5470901FA681B000228403 /* WaveAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveAppTests.swift; sourceTree = "<group>"; };
 		2D5470921FA681B000228403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D54709E1FA6828500228403 /* Wave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		2D5470A11FA6966C00228403 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +124,18 @@
 			isa = PBXGroup;
 			children = (
 				2D54709E1FA6828500228403 /* Wave.swift */,
+				2D5470A11FA6966C00228403 /* Bar.swift */,
+				2D5470A71FA69A6300228403 /* Extensions */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		2D5470A71FA69A6300228403 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D54709F1FA6828500228403 /* Wave.swift in Sources */,
+				2D5470A21FA6966C00228403 /* Bar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5470A01FA6828500228403 /* Wave.swift in Sources */,
+				2D5470A31FA6966C00228403 /* Bar.swift in Sources */,
 				2D5470801FA681B000228403 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
