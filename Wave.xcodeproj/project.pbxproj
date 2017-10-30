@@ -17,8 +17,6 @@
 		2D5470A91FA6AA1400228403 /* Artbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470A81FA6AA1400228403 /* Artbox.swift */; };
 		2D5470AA1FA6AA1400228403 /* Artbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470A81FA6AA1400228403 /* Artbox.swift */; };
 		2D5470AB1FA6C2DF00228403 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D54709E1FA6828500228403 /* Wave.swift */; };
-		2D5470AD1FA6EB1900228403 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470AC1FA6EB1900228403 /* Settings.swift */; };
-		2D5470AE1FA6EB1900228403 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470AC1FA6EB1900228403 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +45,6 @@
 		2D54709E1FA6828500228403 /* Wave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		2D5470A11FA6966C00228403 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		2D5470A81FA6AA1400228403 /* Artbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artbox.swift; sourceTree = "<group>"; };
-		2D5470AC1FA6EB1900228403 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				2D54709E1FA6828500228403 /* Wave.swift */,
-				2D5470AC1FA6EB1900228403 /* Settings.swift */,
 				2D5470A81FA6AA1400228403 /* Artbox.swift */,
 				2D5470A11FA6966C00228403 /* Bar.swift */,
 				2D5470A71FA69A6300228403 /* Extensions */,
@@ -292,7 +288,6 @@
 				2D5470AB1FA6C2DF00228403 /* Wave.swift in Sources */,
 				2D5470A21FA6966C00228403 /* Bar.swift in Sources */,
 				2D5470A91FA6AA1400228403 /* Artbox.swift in Sources */,
-				2D5470AD1FA6EB1900228403 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +295,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D5470AE1FA6EB1900228403 /* Settings.swift in Sources */,
 				2D5470A01FA6828500228403 /* Wave.swift in Sources */,
 				2D5470A31FA6966C00228403 /* Bar.swift in Sources */,
 				2D5470801FA681B000228403 /* AppDelegate.swift in Sources */,

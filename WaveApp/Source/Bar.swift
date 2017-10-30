@@ -10,7 +10,6 @@ import ScreenSaver
  */
 class Bar {
     //Number of spots tracked
-    private(set) var pivots: uint8 = 0
     private(set) var values = [Int]()
     let max: Int!
     let min: Int!
