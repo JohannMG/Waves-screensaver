@@ -36,8 +36,8 @@ class ArtBox : NSView {
         }
         
         if let context = NSGraphicsContext.current?.cgContext {
-            drawLines(withContext: context)
             drawBackRect(withContext: context)
+            drawLines(withContext: context)
         }
     }
     
@@ -46,9 +46,10 @@ class ArtBox : NSView {
     }
     
     func drawLines(withContext context: CGContext){
-//        for i in (0..<bars.count) {
-//
-//        }
+        for i in (0..<bars.count) {
+            let subRect = CGRect(x: kBarWidth * CGFloat(i), y: 0, width: kBarWidth, height: frame.height)
+            drawTwineInRect( subRect , withContext: context)
+        }
     }
     
     func drawTwineInRect(_ rect: CGRect, withContext context: CGContext){
@@ -59,14 +60,13 @@ class ArtBox : NSView {
         
         context.setLineWidth(kTwineThickness)
         context.setStrokeColor(kTwineColor)
-        
+
         context.addPath(path)
         context.drawPath(using: .stroke)
     }
     
     func drawBackRect(withContext context: CGContext){
         let path = CGMutablePath()
-        path.move(to: CGPoint.zero)
         path.addRect(frame)
         
         path.closeSubpath()

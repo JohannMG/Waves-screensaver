@@ -41,17 +41,17 @@ class Wave: ScreenSaverView {
         super.draw(rect)
         self.window?.backgroundColor = NSColor.black
         
-        let leftRightPadding = frame.width * kPaddingLeftRightPercent
-        
         if let context = NSGraphicsContext.current?.cgContext {
+            context.saveGState()
             drawLine(inContext: context, inRect: frame)
         }
-        
-        artBoxView.frame = CGRect(x: floor(leftRightPadding),
+        let offset = floor((frame.width * kPaddingLeftRightPercent))
+        artBoxView.frame = CGRect(x: offset,
                                   y: 0,
-                                  width: floor(frame.width * (1 - kPaddingLeftRightPercent*2)),
+                                  width: floor(frame.width - offset - offset ),
                                   height: frame.height)
         needsDisplay = true
+        
 	}
     
     override func animateOneFrame(){
