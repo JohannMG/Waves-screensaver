@@ -6,6 +6,7 @@ import ScreenSaver
 class Wave: ScreenSaverView {
     
     let kPaddingLeftRightPercent: CGFloat = 0.1
+    let kPaddingTopBottomPercent: CGFloat = 0.05
     
     var artBoxView: ArtBox!
     
@@ -20,8 +21,7 @@ class Wave: ScreenSaverView {
 	}
     
     func setUp(){
-        
-        self.animationTimeInterval = 1.0 / 30.0
+        self.animationTimeInterval = 1.0 / 10.0
         
         artBoxView = ArtBox(frame: CGRect.zero)
         addSubview(artBoxView)
@@ -48,15 +48,14 @@ class Wave: ScreenSaverView {
         
         let offset = floor((frame.width * kPaddingLeftRightPercent))
         artBoxView.frame = CGRect(x: offset,
-                                  y: 0,
-                                  width: floor(frame.width - offset - offset ),
-                                  height: frame.height)
+                                  y: frame.height * kPaddingTopBottomPercent,
+                                  width:floor(frame.width - offset - offset ),
+                                  height:floor(frame.height - (2 * frame.height * kPaddingTopBottomPercent)))
         artBoxView.setup()
    
 	}
     
     override func animateOneFrame(){
-
         artBoxView.animateOneFrame()
         needsDisplay = true
     }
