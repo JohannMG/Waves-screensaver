@@ -17,14 +17,14 @@ class ArtBox : NSView {
             return 50
         }
     }
-    let kMotionDampening:Float = 0.01
+    let kMotionDampening:Float = 0.005
     let kTwineThickness: CGFloat = 0.5
     let kPivotHeight: CGFloat = 14.0
     let kPivotWidth: CGFloat = 5.0
     let kPivotsPerTwine = 2
-    let kConnectorThickness: CGFloat = 0.5
+    let kConnectorThickness: CGFloat = 1.0
     
-    let kTwineColor = CGColor(gray: 0.8, alpha: 1.0)
+    let kTwineColor = CGColor(gray: 0.8, alpha: 0.2)
     let kPivotColor = CGColor(red: 1.0, green: 0.1, blue: 0.1, alpha: 0.6)
     let kConnectorColor = CGColor(red: 0.7, green: 0.7, blue: 0.87, alpha: 0.8)
     
