@@ -11,10 +11,12 @@
 		2D5470821FA681B000228403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5470811FA681B000228403 /* Assets.xcassets */; };
 		2D5470851FA681B000228403 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D5470831FA681B000228403 /* MainMenu.xib */; };
 		2D5470911FA681B000228403 /* WaveAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470901FA681B000228403 /* WaveAppTests.swift */; };
-		2D54709F1FA6828500228403 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D54709E1FA6828500228403 /* Wave.swift */; };
 		2D5470A01FA6828500228403 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D54709E1FA6828500228403 /* Wave.swift */; };
 		2D5470A21FA6966C00228403 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470A11FA6966C00228403 /* Bar.swift */; };
 		2D5470A31FA6966C00228403 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470A11FA6966C00228403 /* Bar.swift */; };
+		2D5470A91FA6AA1400228403 /* Artbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470A81FA6AA1400228403 /* Artbox.swift */; };
+		2D5470AA1FA6AA1400228403 /* Artbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5470A81FA6AA1400228403 /* Artbox.swift */; };
+		2D5470AB1FA6C2DF00228403 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D54709E1FA6828500228403 /* Wave.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 		2D5470921FA681B000228403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D54709E1FA6828500228403 /* Wave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		2D5470A11FA6966C00228403 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		2D5470A81FA6AA1400228403 /* Artbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				2D54709E1FA6828500228403 /* Wave.swift */,
+				2D5470A81FA6AA1400228403 /* Artbox.swift */,
 				2D5470A11FA6966C00228403 /* Bar.swift */,
 				2D5470A71FA69A6300228403 /* Extensions */,
 			);
@@ -281,8 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D54709F1FA6828500228403 /* Wave.swift in Sources */,
+				2D5470AB1FA6C2DF00228403 /* Wave.swift in Sources */,
 				2D5470A21FA6966C00228403 /* Bar.swift in Sources */,
+				2D5470A91FA6AA1400228403 /* Artbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +298,7 @@
 				2D5470A01FA6828500228403 /* Wave.swift in Sources */,
 				2D5470A31FA6966C00228403 /* Bar.swift in Sources */,
 				2D5470801FA681B000228403 /* AppDelegate.swift in Sources */,
+				2D5470AA1FA6AA1400228403 /* Artbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +446,7 @@
 				INFOPLIST_FILE = Wave/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johannmg.Wave1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johannmg.Wave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wave1-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -460,7 +466,7 @@
 				INFOPLIST_FILE = Wave/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johannmg.Wave1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johannmg.Wave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wave1-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

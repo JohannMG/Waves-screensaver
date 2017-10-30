@@ -5,18 +5,29 @@ import ScreenSaver
 @objc
 class Wave: ScreenSaverView {
     
-	var image: NSImage?
-
+    let kPaddingLeftRightPercent: CGFloat = 0.1
+    
+    var artBoxView: ArtBox!
+    
 	override init?(frame: NSRect, isPreview: Bool) {
 		super.init(frame: frame, isPreview: isPreview)
-		loadImage()
+        setUp()
 	}
 
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
-		loadImage()
 		fatalError("init(coder:) has not been implemented")
 	}
+    
+    func setUp(){
+        
+        self.animationTimeInterval = 1.0 / 30.0
+        
+        artBoxView = ArtBox(frame: CGRect.zero)
+        artBoxView.setup()
+        addSubview(artBoxView)
+        needsDisplay = true
+    }
 
 	override func startAnimation() {
 	  super.startAnimation()
@@ -27,30 +38,33 @@ class Wave: ScreenSaverView {
 	}
 
 	override func draw(_ rect: NSRect) {
-//        super.draw(rect)
-		/*
-		[[NSColor redColor] set];
-		NSRectFill([self bounds]);
-		*/
-//        NSColor.red.set()
-//        self.window?.backgroundColor = NSColor.gray
-		
-//        if let image = image {
-//          let point = CGPoint(x: (frame.size.width - image.size.width) / 2, y: (frame.size.height - image.size.height) / 2)
-//          image.draw(at: point, from: NSZeroRect, operation: .sourceOver, fraction: 1)
-//        }
+        super.draw(rect)
+        self.window?.backgroundColor = NSColor.black
+        
+        let leftRightPadding = frame.width * kPaddingLeftRightPercent
+        
         if let context = NSGraphicsContext.current?.cgContext {
-            drawLine(inContext: context, inRect: rect)
+            drawLine(inContext: context, inRect: frame)
         }
         
+        artBoxView.frame = CGRect(x: floor(leftRightPadding),
+                                  y: 0,
+                                  width: floor(frame.width * (1 - kPaddingLeftRightPercent*2)),
+                                  height: frame.height)
+        needsDisplay = true
 	}
+    
+    override func animateOneFrame(){
+
+        artBoxView.animateOneFrame()
+        needsDisplay = true
+    }
     
     func drawLine(inContext context: CGContext, inRect rect: CGRect){
         let path = CGMutablePath()
         
         path.move(to: CGPoint(x: 40, y: 40))
         path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-//        path.addLine(to: CGPoint(x: 50, y: 50))
         
         path.closeSubpath()
         
@@ -62,25 +76,11 @@ class Wave: ScreenSaverView {
         context.drawPath(using: .stroke)
         
     }
-
-	func loadImage() {
-		DispatchQueue.global(qos: .default).async {
-		  let url = URL(string: "https://raw.githubusercontent.com/yomajkel/ImageStream/added-swift-image/assets/swift.png")
-		  let data = try? Data(contentsOf: url! as URL)
-		  if let data = data {
-            self.image = NSImage(data: data)
-            DispatchQueue.main.async { self.needsDisplay = true }
-		  }
-		}
-	}
 	
 	override var hasConfigureSheet: Bool {
 		return false
 	}
 
-	override func animateOneFrame() {
-
-	}
 	
 	override var configureSheet: NSWindow? {
 		return nil
