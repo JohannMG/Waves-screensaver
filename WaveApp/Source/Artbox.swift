@@ -13,7 +13,7 @@ class ArtBox : NSView {
     
     let kBarWidth: CGFloat = 40
     let kMotionDampening:Float = 0.1
-    let kTwineThickness: CGFloat = 1.0
+    let kTwineThickness: CGFloat = 0.5
     
     let kTwineColor = CGColor(gray: 0.8, alpha: 1.0)
     let kPivotColor = CGColor(red: 1.0, green: 0.1, blue: 0.1, alpha: 0.7)
@@ -21,6 +21,7 @@ class ArtBox : NSView {
     var bars = [Bar]()
     
     func setup(){
+        if bars.count > 0 { return }
         let barsThatCanFit:Int = Int( floor(bounds.width / kBarWidth) )
         
         for _ in (0..<barsThatCanFit) {
@@ -35,10 +36,8 @@ class ArtBox : NSView {
             bar.update(withNoiseRatio: kMotionDampening)
         }
         
-        if let context = NSGraphicsContext.current?.cgContext {
-            drawBackRect(withContext: context)
-            drawLines(withContext: context)
-        }
+        drawLines(withContext: NSGraphicsContext.current!.cgContext)
+//        drawBackRect(withContext: NSGraphicsContext.current!.cgContext)
     }
     
     func animateOneFrame(){
@@ -54,8 +53,8 @@ class ArtBox : NSView {
     
     func drawTwineInRect(_ rect: CGRect, withContext context: CGContext){
         let path = CGMutablePath()
-        path.move(to:CGPoint(x: rect.maxX, y: rect.maxY))
-        path.addLine(to:CGPoint(x: rect.maxX, y: rect.minY))
+        path.move(to:CGPoint(x: rect.midX, y: rect.maxY))
+        path.addLine(to:CGPoint(x: rect.midX, y: rect.minY))
         path.closeSubpath()
         
         context.setLineWidth(kTwineThickness)

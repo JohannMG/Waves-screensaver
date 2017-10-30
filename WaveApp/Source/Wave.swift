@@ -24,13 +24,13 @@ class Wave: ScreenSaverView {
         self.animationTimeInterval = 1.0 / 30.0
         
         artBoxView = ArtBox(frame: CGRect.zero)
-        artBoxView.setup()
         addSubview(artBoxView)
         needsDisplay = true
     }
 
 	override func startAnimation() {
-	  super.startAnimation()
+        super.startAnimation()
+        
 	}
 
 	override func stopAnimation() {
@@ -40,18 +40,19 @@ class Wave: ScreenSaverView {
 	override func draw(_ rect: NSRect) {
         super.draw(rect)
         self.window?.backgroundColor = NSColor.black
-        
+
         if let context = NSGraphicsContext.current?.cgContext {
             context.saveGState()
             drawLine(inContext: context, inRect: frame)
         }
+        
         let offset = floor((frame.width * kPaddingLeftRightPercent))
         artBoxView.frame = CGRect(x: offset,
                                   y: 0,
                                   width: floor(frame.width - offset - offset ),
                                   height: frame.height)
-        needsDisplay = true
-        
+        artBoxView.setup()
+   
 	}
     
     override func animateOneFrame(){
